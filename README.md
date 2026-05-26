@@ -1,237 +1,110 @@
-# IPL Match Intelligence
+<h1 align="center">🏏 IPL Match Intelligence</h1>
 
-An end-to-end cricket analytics and machine learning project for understanding IPL chase behavior, pressure situations, wicket impact, and live match prediction.
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&pause=1000&color=FF6B00&center=true&vCenter=true&width=900&lines=IPL+Analytics+%F0%9F%8F%8F;Machine+Learning+Powered+Predictions+%F0%9F%A4%96;Pressure+Analysis+%F0%9F%94%A5;XGBoost+%7C+SHAP+%7C+Streamlit+%F0%9F%9A%80" />
+</p>
 
-This project combines exploratory data analysis, tactical cricket storytelling, machine learning model comparison, SHAP explainability, and a Streamlit dashboard that predicts whether an IPL chase is likely to succeed or fail.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/XGBoost-E76F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SHAP-6A5ACD?style=for-the-badge"/>
+</p>
 
-## Project Snapshot
+---
 
-IPL matches often feel unpredictable, especially during run chases. A team can look comfortable for 12 overs and still collapse under pressure. This project studies that exact problem:
+# 🚀 About The Project
 
-**What actually separates a successful IPL chase from a failed one?**
+🏏 An advanced cricket analytics + machine learning project that predicts IPL chase outcomes using real-time match pressure, wickets, momentum, and run-rate dynamics.
 
-The analysis focuses on live chase variables such as:
+This project combines:
 
-- Target score
-- Current score
-- Runs remaining
-- Balls remaining
-- Wickets lost
-- Wickets left
-- Current run rate
-- Required run rate
-- Pressure index
-- Toss decision
-- Venue
-- Chasing and defending teams
+✨ Exploratory Data Analysis  
+🤖 Machine Learning Models  
+📊 SHAP Explainability  
+🔥 Pressure Index Engineering  
+🎯 Live Match Prediction  
+🌐 Streamlit Deployment
 
-The final deployed model is **XGBoost**, selected because it achieved the best performance in the notebook.
+---
 
-## Live App Features
+# 🧠 Problem Statement
 
-The Streamlit dashboard includes:
+> What actually separates a successful IPL chase from a collapse under pressure?
 
-- Interactive IPL chase predictor
-- EDA story sections with saved visualizations
-- Machine learning model comparison
-- Feature importance analysis
-- SHAP explainability summary
-- Live calculation of run rate, required rate, wickets left, balls remaining, and pressure index
-- Match situation notes based on model inputs
-- Current IPL teams shown first, with historical teams still supported where available
+This project studies live chase behavior using:
 
-## Model Performance
+- 🎯 Target Score
+- ⚡ Required Run Rate
+- 🏏 Wickets Left
+- 🔥 Pressure Index
+- ⏳ Balls Remaining
+- 📍 Venue Effects
+- 🪙 Toss Decision
+- 📈 Momentum Patterns
 
-Three models were trained and compared:
+---
 
-| Model | Accuracy | AUC Score |
-|---|---:|---:|
+# 🏆 Final Model Performance
+
+| 🚀 Model | 🎯 Accuracy | 📊 AUC Score |
+|---|---|---|
 | Logistic Regression | 80.96% | 0.898 |
 | Random Forest | 83.25% | 0.922 |
-| XGBoost | 90.35% | 0.970 |
+| XGBoost 🔥 | **90.35%** | **0.970** |
 
-XGBoost was selected for the final Streamlit app because it produced the highest accuracy and the strongest class separation.
+---
 
-## Why XGBoost Was Chosen
+# 🔥 Why XGBoost Won
 
-IPL chase prediction is not decided by one feature alone. A chase can change quickly when required run rate rises, wickets fall, and balls remaining decrease at the same time.
+✅ Captured pressure-based collapses  
+✅ Learned wicket-risk interactions  
+✅ Understood death-over pressure  
+✅ Best class separation  
+✅ Highest prediction confidence
 
-XGBoost performed best because it can capture these combined effects more effectively than simpler models. It learned pressure-based patterns involving:
+---
 
-- High required run rate with low wickets left
-- Large targets with weak current scoring rate
-- Rising pressure index in the middle and death overs
-- Chase stability when wickets are preserved
-- Difficult finishing situations with fewer balls remaining
+# 📊 Dashboard Preview
 
-## Dashboard Preview
-
-### Model Comparison
+## 🏏 Model Comparison
 
 ![Model accuracy comparison](images/model_accuracy_comparison.png)
 
-### ROC Curve Comparison
+## 📈 ROC Curve
 
 ![ROC curve comparison](images/roc_curve_comparison.png)
 
-### Feature Importance
+## 🧠 Feature Importance
 
 ![Feature importance](images/feature_importance.png)
 
-### SHAP Summary
+## 🔍 SHAP Explainability
 
 ![SHAP summary](images/summary_plot.png)
 
-## Key Analysis Insights
+---
 
-### Toss Is Useful, But Not Decisive
+# ⚡ Streamlit Features
 
-The toss can influence strategy, especially when teams choose to field first. However, the analysis suggests that toss advantage alone is much weaker than actual match execution.
+✨ Live IPL Chase Predictor  
+📊 Interactive Analytics Dashboard  
+🔥 Pressure Analysis  
+🧠 SHAP Explainability  
+🎯 Match Situation Notes  
+📈 Model Comparison  
+🏏 Team & Venue Insights
 
-### Middle Overs Matter More Than They Look
+---
 
-The middle overs often create the biggest separation between winners and losers. Stable scoring and wicket preservation between overs 7 and 15 are major signs of a controlled chase.
+# 🛠️ Tech Stack
 
-### Wickets Are Match Resources
+<p align="center">
 
-The model and EDA both show that wickets are not just dismissals. They decide how much risk a batting side can take later in the innings.
+<img src="https://skillicons.dev/icons?i=python,vscode,git,github"/>
 
-### Required Run Rate Drives Pressure
-
-Required run rate and pressure index were among the strongest predictors. When the required rate moves too far ahead of current scoring rate, the chase becomes much harder.
-
-### SHAP Makes The Model Easier To Explain
-
-SHAP shows not only which features matter, but also how they push the prediction toward success or failure. High required run rate, high pressure index, large targets, and wicket loss generally push predictions toward failed chases.
-
-## Project Structure
-
-```text
-IPL-Match-Intelligence/
-|-- app.py
-|-- ipl.ipynb
-|-- ipl_chase_model.pkl
-|-- requirements.txt
-|-- README.md
-|-- images/
-|   |-- model_accuracy_comparison.png
-|   |-- roc_curve_comparison.png
-|   |-- feature_importance.png
-|   |-- summary_plot.png
-|   |-- ...
-|-- ipl.csv
-```
-
-## Streamlit App Pages
-
-### Home
-
-Introduces the project, key model metrics, and navigation.
-
-### EDA Analysis
-
-Shows toss behavior, scoring phases, venue effects, pressure analysis, chase patterns, player analysis, and momentum collapse.
-
-### ML Analysis
-
-Compares Logistic Regression, Random Forest, and XGBoost using accuracy, AUC, confusion matrices, feature importance, and SHAP.
-
-### Predictor
-
-Allows users to enter a live chase situation and get:
-
-- Chase success probability
-- Prediction label
-- Required run rate
-- Current run rate
-- Balls remaining
-- Runs remaining
-- Match situation notes
-
-### About
-
-Explains the project idea, tools, and final model choice.
-
-## How To Run Locally
-
-Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd IPL-Match-Intelligence
-```
-
-Create and activate a virtual environment:
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the Streamlit app:
-
-```bash
-streamlit run app.py
-```
-
-## Deployment Notes
-
-For Streamlit Community Cloud, deploy these files:
-
-```text
-app.py
-requirements.txt
-ipl_chase_model.pkl
-images/
-```
-
-The app does not need `ipl.csv` to run because it loads the trained model directly from `ipl_chase_model.pkl`.
-
-Do not deploy:
-
-```text
-venv/
-__pycache__/
-```
-
-## Model Input Design
-
-The predictor page sends the following feature columns to the model:
-
-```text
-target
-current_score
-runs_remaining
-balls_remaining
-innings2_wickets
-wickets_left
-current_rr
-required_rr
-pressure_index
-won_toss
-chasing_team
-defending_team
-venue
-toss_decision
-batter_category
-bowler_category
-```
-
-The app calculates most of the live match values automatically from user input.
-
-## Player Category Note
-
-The notebook trained the model using selected star-player categories and an `Others` category. The app includes more current player names for a better user experience, but names not seen during training are safely mapped to `Others` before prediction.
-
-This keeps the app user-friendly without breaking the model pipeline.
-
-## Tech Stack
+</p>
 
 - Python
 - Pandas
@@ -239,13 +112,26 @@ This keeps the app user-friendly without breaking the model pipeline.
 - Scikit-learn
 - XGBoost
 - SHAP
-- Matplotlib
-- Seaborn
 - Streamlit
-- Joblib
+- Matplotlib
 
-## Final Takeaway
+---
 
-This project shows that IPL chases are not only about power hitting. Successful chases usually leave measurable signals: controlled required run rate, wickets in hand, manageable pressure, and stable scoring momentum.
+# 📂 Project Structure
 
-The Streamlit app turns those ideas into an interactive prediction system that reads the current match situation and estimates the chance of a successful chase.
+```bash
+IPL-Match-Intelligence/
+│
+├── app.py
+├── ipl.ipynb
+├── ipl_chase_model.pkl
+├── requirements.txt
+├── README.md
+│
+├── images/
+│   ├── model_accuracy_comparison.png
+│   ├── roc_curve_comparison.png
+│   ├── feature_importance.png
+│   └── summary_plot.png
+│
+└── ipl.csv
