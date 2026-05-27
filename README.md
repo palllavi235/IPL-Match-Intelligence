@@ -115,7 +115,7 @@ This project studies live chase behavior using:
 - Streamlit
 - Matplotlib
 
----
+--
 
 # 📂 Project Structure
 
